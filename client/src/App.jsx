@@ -10,6 +10,10 @@ function App() {
     setCode(value)
     console.log(code)
   }, [])
+
+  const submitCode = () => {
+    console.log(code)
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +25,9 @@ function App() {
             theme="dark"
             onChange={onChange}
           />
+          <div className="border-2 bg-green-500" onClick={submitCode}>
+            Submit
+          </div>
         </div>
       </header>
     </div>
