@@ -1,5 +1,6 @@
 import "./App.css"
 import CodeMirror from "@uiw/react-codemirror"
+import axios from "axios"
 import { javascript } from "@codemirror/lang-javascript"
 import { useState, useCallback } from "react"
 
@@ -12,6 +13,9 @@ function App() {
   }, [])
 
   const submitCode = () => {
+    axios.post("http://localhost:80/javascript", { code }).then(({ data }) => {
+      console.log(data)
+    })
     console.log(code)
   }
   return (
